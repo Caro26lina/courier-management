@@ -20,7 +20,7 @@ export default function EditCourier() {
   // Fetch courier by ID
   const getCourier = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/courier/${id}`);
+      const res = await axios.get(`https://courier-management-backend-j4h2.onrender.com/api/courier/${id}`);
       setFormData(res.data);   // ✅ Directly set returned data
     } catch (error) {
       console.error("Error fetching courier:", error);
@@ -43,7 +43,7 @@ export default function EditCourier() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/courier/${id}`, formData);
+      await axios.put(`https://courier-management-backend-j4h2.onrender.com/api/courier/${id}`, formData);
       alert("✅ Courier Updated Successfully");
       navigate("/admin/dashboard");
     } catch (error) {

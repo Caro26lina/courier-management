@@ -6,12 +6,12 @@ export default function CourierList() {
   const [couriers, setCouriers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/courier/getAll")
+    axios.get("https://courier-management-backend-j4h2.onrender.com/api/courier/getAll")
       .then((res) => setCouriers(res.data));
   }, []);
 
   const deleteCourier = async (id) => {
-    await axios.delete(`http://localhost:5000/api/courier/delete/${id}`);
+    await axios.delete(`https://courier-management-backend-j4h2.onrender.com/api/courier/delete/${id}`);
     alert("Courier Deleted ❌");
 
     setCouriers(couriers.filter((item) => item._id !== id));

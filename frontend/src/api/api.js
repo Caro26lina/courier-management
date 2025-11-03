@@ -4,7 +4,7 @@ import axios from "axios";
 const API = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL
     ? `${import.meta.env.VITE_BACKEND_URL}/api`
-    : "http://localhost:5000/api",
+    : "https://courier-management-backend-j4h2.onrender.com/api",
 });
 
 // ✅ Automatically attach JWT token if available
